@@ -3,78 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HCAI Dynamics | 領先的 AI 驅動研發導航平台</title>
+    <title>HCAI Dynamics | Next-Gen Chemical Navigation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #2c3e50; --accent: #3498db; --bg: #ffffff; --text: #333; }
-        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.7; color: var(--text); max-width: 900px; margin: 0 auto; padding: 40px 20px; background-color: #fcfcfc; }
-        header { border-bottom: 3px solid var(--accent); margin-bottom: 50px; padding-bottom: 20px; }
-        h1 { color: var(--primary); font-size: 2.5em; margin: 0; letter-spacing: -1px; }
-        .tagline { font-size: 1.2em; color: var(--accent); font-weight: bold; margin-top: 5px; }
-        
-        .hero { margin: 40px 0; }
-        .hero p { font-size: 1.1em; color: #555; }
+        :root {
+            --bg: #0a192f;
+            --card-bg: #112240;
+            --accent: #64ffda;
+            --text-main: #ccd6f6;
+            --text-dim: #8892b0;
+            --white: #e6f1ff;
+        }
 
-        .tech-section { display: grid; grid-template-columns: 1fr; gap: 20px; margin: 40px 0; }
-        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee; }
-        .card h3 { color: var(--primary); margin-top: 0; border-left: 4px solid var(--accent); padding-left: 15px; }
-        
-        .stealth-banner { background: #eef7fd; padding: 20px; border-radius: 8px; border: 1px dashed var(--accent); margin: 40px 0; font-style: italic; }
-        
-        ul { padding-left: 20px; }
-        li { margin-bottom: 12px; }
-        strong { color: var(--primary); }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
 
-        .contact { background: var(--primary); color: white; padding: 40px; border-radius: 12px; text-align: center; }
-        .contact a { color: #3498db; text-decoration: none; font-weight: bold; }
-        .footer { font-size: 0.85em; color: #95a5a6; margin-top: 60px; text-align: center; border-top: 1px solid #eee; padding-top: 20px; }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* --- Header --- */
+        header {
+            padding: 40px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--accent);
+            letter-spacing: -1px;
+        }
+
+        .status-badge {
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--accent);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+            border: 1px solid var(--accent);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 80px 0;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--white);
+            margin: 0 0 20px 0;
+            line-height: 1.1;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #64ffda, #48b1bf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.25rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin-bottom: 40px;
+        }
+
+        /* --- Stats Grid --- */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .stat-item {
+            border-left: 2px solid var(--accent);
+            padding-left: 20px;
+        }
+
+        .stat-num {
+            display: block;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stat-label {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- Cards --- */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .card h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* --- Contact --- */
+        .contact-box {
+            background: linear-gradient(135deg, #112240 0%, #0a192f 100%);
+            padding: 60px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--accent);
+            margin: 80px 0;
+        }
+
+        .btn-mail {
+            display: inline-block;
+            padding: 18px 32px;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .btn-mail:hover {
+            background: rgba(100, 255, 218, 0.1);
+        }
+
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(136, 146, 176, 0.1);
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stealth-tag {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .container { padding: 0 20px; }
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>HCAI Dynamics</h1>
-    <div class="tagline">Ultra-Low Iteration Chemical Optimization</div>
-</header>
+<div class="container">
+    <header>
+        <div class="logo">HCAI.DYNAMICS</div>
+        <div class="status-badge">STEALTH_MODE_ACTIVE</div>
+    </header>
 
-<section class="hero">
-    <h2>將研發週期從「月」縮短至「週」</h2>
-    <p>我們是領先的 Deep Tech 顧問團隊，致力於透過專有的物理 AI 引擎，解決複雜化學系統中的動態演化難題。我們協助企業在 <strong>3 到 5 次實驗內</strong>，精準鎖定最優化反應路徑，極大化減少無效研發投入。</p>
-</section>
+    <section class="hero">
+        <h1>從數據到反應的<br><span class="gradient-text">最短路徑導航</span></h1>
+        <p class="hero-desc">
+            我們利用領先的物理 AI 引擎，將複雜化學系統的研發從「盲目試錯」轉化為「精準導航」。
+            透過動態特徵投影，協助企業在極短的迭代週期內達成最優化路徑。
+        </p>
 
-<div class="stealth-banner">
-    <strong>Stealth Mode Notice:</strong> HCAI Dynamics 目前處於隱身模式，專注於與全球頂尖工業夥伴開發高價值催化系統與精密合成路徑。
-</div>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-num">1.8M+</span>
+                <span class="stat-label">Dynamic Fingerprints</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">3-5</span>
+                <span class="stat-label">Iterations to Success</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">&lt; 80%</span>
+                <span class="stat-label">R&D Time Reduced</span>
+            </div>
+        </div>
+    </section>
 
-<section class="tech-section">
-    <div class="card">
-        <h3>核心技術：物理特徵映射引擎</h3>
-        <ul>
-            <li><strong>動態穩定性邊界預測 (DSBP)</strong>：利用專有的多維分析技術，識別化學系統在特定激發下的動態行為，預判反應觸發的臨界窗口。</li>
-            <li><strong>1.8M+ 物理指紋庫</strong>：基於過百萬組跨尺度數據訓練的底層模型，具備強大的「物理直覺」，能跨越不同分子結構提取通用規律。</li>
-            <li><strong>自動化導航優化器</strong>：結合主動學習與控制理論，為複雜反應路徑提供精確的參數（溫度、壓力、配體）導航建議。</li>
-        </ul>
-    </div>
-</section>
+    <section class="tech-grid">
+        <div class="card">
+            <h3>技術核心：物理約束與潛在動力學模型</h3>
+            <ul>
+                <li><strong>多維動態特徵映射 (MDM)</strong>：自主研發的特徵提取引擎，能在虛擬空間中預判分子在特定激發狀態下的演化邊界。</li>
+                <li><strong>自動化路徑導航器</strong>：結合主動學習與穩定性分析，直接生成具備高置信度的實驗參數組合（T, P, Catalyst config）。</li>
+                <li><strong>深度物理直覺層</strong>：基於百萬級矩陣訓練，使 AI 具備跨領域的「物理感度」，能識別傳統模型忽略的隱藏特徵。</li>
+            </ul>
+        </div>
+    </section>
 
-<section class="services">
-    <h3>專業顧問服務</h3>
-    <p>我們為製藥、材料科學及精細化工產業提供以下解決方案：</p>
-    <ul>
-        <li><strong>關鍵反應路徑診斷</strong>：分析現有路徑的穩定性瓶頸，提供修正建議。</li>
-        <li><strong>高維度配體與催化劑篩選</strong>：在虛擬空間完成 99% 的預篩選。</li>
-        <li><strong>反應數位孿生 (Digital Twin) 建立</strong>：為企業私有製程建立動態預測模型。</li>
-    </ul>
-</section>
+    <section class="contact-box">
+        <h2 style="color: var(--white);">啟動精準研發</h2>
+        <p style="color: var(--text-dim);">HCAI Dynamics 目前僅與特定領域的工業領先者開展深度合作。<br>如需技術驗證或顧問邀約，請聯繫技術團隊。</p>
+        <a href="mailto:hsiang@hsiang-chemcat.dev" class="btn-mail">Say Hello (hsiang@hsiang-chemcat.dev)</a>
+    </section>
 
-<section class="contact">
-    <h3>啟動您的精準研發</h3>
-    <p>由於業務特殊性，我們僅接受特定合作邀約。請聯繫我們的技術團隊：</p>
-    <p><a href="mailto:hsiang@hsiang-chemcat.dev">hsiang@hsiang-chemcat.dev</a></p>
-</section>
-
-<div class="footer">
-    &copy; 2026 HCAI Dynamics Tech (Hsiang-ChemCat). All rights reserved.<br>
-    Authorized Access Only | <a href="#">Security Protocols</a>
+    <footer>
+        &copy; 2026 HCAI DYNAMICS TECH. ALL RIGHTS RESERVED.<br>
+        <span class="stealth-tag">// RESTRICTED ACCESS //</span> ENCRYPTED DATA PIPELINES ACTIVE
+    </footer>
 </div>
 
 </body>
